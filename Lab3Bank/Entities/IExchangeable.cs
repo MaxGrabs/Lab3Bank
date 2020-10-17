@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lab3Bank
+namespace Lab3Bank.Entities
 {
-    class ChequingAccount : Account
+    interface IExchangeable
     {
+        double USValue(double rate);
     }
 }

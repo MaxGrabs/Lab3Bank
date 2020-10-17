@@ -12,6 +12,7 @@ namespace Lab3Bank
     {
         static void Main(string[] args)
         {
+            Account s = new SavingsAccount();
         }
     }
 }

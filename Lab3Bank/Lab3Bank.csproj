@@ -43,16 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Account.cs" />
-    <Compile Include="ChequingAccount.cs" />
+    <Compile Include="Entities\Account.cs" />
     <Compile Include="Entities\AccountStatus.cs" />
+    <Compile Include="Entities\ChequingAccount.cs" />
+    <Compile Include="Entities\GlobalSavingsAccount.cs" />
+    <Compile Include="Entities\IAccount.cs" />
+    <Compile Include="Entities\IExchangeable.cs" />
+    <Compile Include="Entities\SavingsAccount.cs" />
     <Compile Include="Extensions\Class1.cs" />
-    <Compile Include="GlobalSavingsAccount.cs" />
-    <Compile Include="IAccount.cs" />
-    <Compile Include="IExchangeable.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SavingsAccount.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lab3Bank
+namespace Lab3Bank.Entities
 {
     interface IAccount
     {

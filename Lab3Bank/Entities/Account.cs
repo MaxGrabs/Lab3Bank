@@ -43,21 +43,25 @@ namespace Lab3Bank.Entities
         {
             currentBalance -= serviceCharge;
             CalculateInterest();
-
+            
             Console.WriteLine(totalDeposit);
             Console.WriteLine(totalWithdrawal);
             Console.WriteLine(numDeposit);
             Console.WriteLine(numWithdrawal);
             double percentage = (currentBalance / startBalance) * 100;
-
+               
+            string end =  "starting balance of the month " + startBalance + " Balance at the end of the month " + currentBalance + " the change in balance over the month " + "%" + percentage;
+            string hello = "hello";
+            /*
 
             startBalance = currentBalance;
             totalDeposit = 0;
             numWithdrawal = 0;
             numDeposit = 0;
             totalWithdrawal = 0;
+            */
             //ALSO PRINT ANY DETAILS THAT public void CalculateInterest() may print
-            return "starting balance of the month " + startBalance + " Balance at the end of the month " + currentBalance + " the change in balance over the month " + "%" + percentage;
+            return hello;
         }
 
         public virtual void MakeWithdrawl(double amount)

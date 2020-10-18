@@ -5,11 +5,27 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Lab3Bank.Entities
+
 {
     class SavingsAccount : Account
     {
+        protected double startBalance;
+        protected double currentBalance;
+        protected double totalDeposit;
+        protected double numDeposit;
+        protected double totalWithdrawal;
+        protected double numWithdrawal;
+        protected double interestRate;
+        protected double serviceCharge;
+
+        protected enum Status
+        {
+            active,
+            inactive
+        };
+        new protected Status status;
         //Change later
-        SavingsAccount sav = new SavingsAccount(2, 5);
+
         //^Change later
         public SavingsAccount(double balance, double annualInterestRate) : base(balance, annualInterestRate)
         {
@@ -19,32 +35,34 @@ namespace Lab3Bank.Entities
         public override void MakeWithdrawl(double amount)
         {
             //this should check if account is active and if true it will call Base MakeWithdrawl
-            if (sav.status == Status.active) { 
+            if (status == Status.active) { 
             base.MakeWithdrawl(amount);
             }
+            //SLAP AN ERROR
         }
 
         public override void MakeDeposit(double amount)
         {
-            if (sav.status == Status.inactive)
+            if (status == Status.inactive)
             {
                 base.MakeDeposit(amount);
                 if(amount > 25)
                 {
-                    sav.status = Status.active;
+                   status = Status.active;
                 }
 
             }
 
+            
         }
         public override string CloseAndReport()
         {
-            if(sav.numWithdrawal > 4)
+            if(base.numWithdrawal > 4)
             {
-                double temp = sav.numWithdrawal - 4;
-                sav.serviceCharge += sav.serviceCharge + temp;
+                
+                base.serviceCharge += base.numWithdrawal - 4;
             }
-            //um temporary
+            
             return base.CloseAndReport();
         }
     }

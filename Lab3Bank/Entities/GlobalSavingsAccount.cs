@@ -8,15 +8,15 @@ namespace Lab3Bank.Entities
 {
     class GlobalSavingsAccount : SavingsAccount, IExchangeable
     {
-        GlobalSavingsAccount(double balance, double annualInterestRate) : base(balance, annualInterestRate)
+        public GlobalSavingsAccount(double balance, double annualInterestRate) : base(balance, annualInterestRate)
         {
 
         }
-        public double USValue(double rate)
+        public double USValue()
         {
-            currentBalance = currentBalance * rate;
-            return currentBalance;
+            return currentBalance * .76;
 
         }
     }
 }
+    

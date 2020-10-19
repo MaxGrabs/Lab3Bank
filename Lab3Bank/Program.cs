@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Lab3Bank.Entities;
+using Lab3Bank.Extensions;
+
 
 
 namespace Lab3Bank
@@ -16,7 +18,10 @@ namespace Lab3Bank
                 SavingsAccount sav = new SavingsAccount(5,0.12);
                 ChequingAccount che = new ChequingAccount(5,0.12);
                 GlobalSavingsAccount glo = new GlobalSavingsAccount(5,0.12);
-            while (1 == 1) {
+            Boolean success1 = false;
+
+                
+            while (success1 == false) {
             try 
             {
                
@@ -88,7 +93,7 @@ namespace Lab3Bank
                                 Console.WriteLine("How much would you like to deposit?");
                                 string depositString = Console.ReadLine();
                                 double deposit = Convert.ToDouble(depositString);
-                                che.MakeDeposit(deposit);
+                                glo.MakeDeposit(deposit);
                                 break;
                             case "B":
                                 Console.WriteLine("How much would you like to withdraw?");
@@ -110,13 +115,13 @@ namespace Lab3Bank
                         }
                         break;
                     case "Q":
-                        //exit
+                            success1 = true;
                         break;
                 } 
             }
             catch (Exception e)
             {
-
+                    Console.WriteLine("Entered a incorrect value. ");
             }
             finally
             {

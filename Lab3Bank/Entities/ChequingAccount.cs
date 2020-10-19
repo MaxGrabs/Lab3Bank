@@ -22,8 +22,9 @@ namespace Lab3Bank.Entities
         }
         public override void MakeWithdrawl(double amount)
         {
+         
             //Hard to understand this one. Seems very harsh.
-           if(currentBalance - amount < 0)
+            if (currentBalance - amount < 0)
             {
                 serviceCharge += 15;
             }
@@ -33,6 +34,7 @@ namespace Lab3Bank.Entities
         }
         public override void MakeDeposit(double amount)
         {
+            
             base.MakeDeposit(amount);
         }
         public override string CloseAndReport()

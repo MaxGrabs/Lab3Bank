@@ -3,19 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Lab3Bank.Extensions;
 
 namespace Lab3Bank.Entities
 {
     public abstract class Account : IAccount
     {
-        protected double startBalance;
-        protected double currentBalance; 
-        protected double totalDeposit;
-        protected double numDeposit;
-        protected double totalWithdrawal;
-        protected double numWithdrawal;
-        protected double interestRate;
-        protected double serviceCharge;
+        public double startBalance { get; set; }
+        public double currentBalance{ get; set; }
+
+        public double totalDeposit;
+        public double numDeposit;
+        public double totalWithdrawal;
+        public double numWithdrawal;
+        public double interestRate;
+        public double serviceCharge;
 
         protected enum Status
         {
@@ -50,9 +52,9 @@ namespace Lab3Bank.Entities
             Console.WriteLine("Total number of Deposits " + numDeposit);
             Console.WriteLine("Total number of Withdrawals " + numWithdrawal);
           
-           double percentage = ((currentBalance / startBalance)*100);
+           
                
-           string end =  "starting balance of the month " + startBalance +"\n Balance at the end of the month " + currentBalance + "\n the change in balance over the month "  + percentage + "%" + "\n";
+           string end =  "starting balance of the month " + MyExtensions.toNAMoneyFormat(startBalance) +"\n Balance at the end of the month " + MyExtensions.toNAMoneyFormat(currentBalance) + "\n the change in balance over the month "  + MyExtensions.getPercentageChange(currentBalance, startBalance) + "%" + "\n";
             
             
 
@@ -73,5 +75,8 @@ namespace Lab3Bank.Entities
             totalWithdrawal += amount;
             numWithdrawal++;
         }
+
+        
+
     }
 }

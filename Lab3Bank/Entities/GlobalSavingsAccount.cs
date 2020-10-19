@@ -18,6 +18,7 @@ namespace Lab3Bank.Entities
             return currentBalance * rate ;
             
         }
+
         public override void MakeDeposit(double amount)
         {
             base.MakeDeposit(amount);

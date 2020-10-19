@@ -44,12 +44,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Account.cs" />
-    <Compile Include="Entities\Status.cs" />
     <Compile Include="Entities\ChequingAccount.cs" />
     <Compile Include="Entities\GlobalSavingsAccount.cs" />
     <Compile Include="Entities\IAccount.cs" />
     <Compile Include="Entities\IExchangeable.cs" />
     <Compile Include="Entities\SavingsAccount.cs" />
+    <Compile Include="Extensions\MyExtensions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -57,7 +57,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Extensions\" />
+    <Folder Include="Exceptions\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

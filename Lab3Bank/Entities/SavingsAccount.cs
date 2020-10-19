@@ -10,12 +10,7 @@ namespace Lab3Bank.Entities
     class SavingsAccount : Account
     {
 
-        protected enum Status
-        {
-            active,
-            inactive
-        };
-        new protected Status status;
+  
         //Change later
 
         //^Change later
@@ -26,7 +21,12 @@ namespace Lab3Bank.Entities
         
         public override void MakeWithdrawl(double amount)
         {
-
+            if (currentBalance <= 25)
+            {
+                status = Status.inactive;
+            }
+            else
+                status = Status.active;
             //this should check if account is active and if true it will call Base MakeWithdrawl
             if (status == Status.active) { 
             base.MakeWithdrawl(amount);

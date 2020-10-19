@@ -121,6 +121,7 @@ namespace Lab3Bank
             }
             catch (Exception e)
             {
+                    
                     Console.WriteLine("Entered a incorrect value. ");
             }
             finally

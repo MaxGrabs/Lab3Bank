@@ -9,12 +9,7 @@ namespace Lab3Bank.Entities
     class ChequingAccount : Account
     {
  
-        protected enum Status
-        {
-            active,
-            inactive
-        };
-        new protected Status status;
+      
        
         public ChequingAccount(double balance, double annualInterestRate) : base(balance, annualInterestRate)
         {

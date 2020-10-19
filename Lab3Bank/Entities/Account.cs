@@ -54,7 +54,9 @@ namespace Lab3Bank.Entities
           
            
                
-           string end =  "starting balance of the month " + MyExtensions.toNAMoneyFormat(startBalance) +"\n Balance at the end of the month " + MyExtensions.toNAMoneyFormat(currentBalance) + "\n the change in balance over the month "  + MyExtensions.getPercentageChange(currentBalance, startBalance) + "%" + "\n";
+           string end =  "starting balance of the month " + MyExtensions.toNAMoneyFormat(startBalance) +
+                "\n Balance at the end of the month " + MyExtensions.toNAMoneyFormat(currentBalance) +
+                "\n the change in balance over the month "  + MyExtensions.getPercentageChange(currentBalance, startBalance) + "%" + "\n";
             
             
 

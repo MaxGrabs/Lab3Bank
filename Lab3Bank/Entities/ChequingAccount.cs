@@ -8,15 +8,7 @@ namespace Lab3Bank.Entities
 {
     class ChequingAccount : Account
     {
-        protected double startBalance;
-        protected double currentBalance;
-        protected double totalDeposit;
-        protected double numDeposit;
-        protected double totalWithdrawal;
-        protected double numWithdrawal;
-        protected double interestRate;
-        protected double serviceCharge;
-
+ 
         protected enum Status
         {
             active,
@@ -36,7 +28,7 @@ namespace Lab3Bank.Entities
                 serviceCharge += 15;
             }
            else
-                base.MakeDeposit(amount);
+                base.MakeWithdrawl(amount);
 
         }
         public override void MakeDeposit(double amount)

@@ -9,14 +9,6 @@ namespace Lab3Bank.Entities
 {
     class SavingsAccount : Account
     {
-        protected double startBalance;
-        protected double currentBalance;
-        protected double totalDeposit;
-        protected double numDeposit;
-        protected double totalWithdrawal;
-        protected double numWithdrawal;
-        protected double interestRate;
-        protected double serviceCharge;
 
         protected enum Status
         {
@@ -34,6 +26,7 @@ namespace Lab3Bank.Entities
         
         public override void MakeWithdrawl(double amount)
         {
+
             //this should check if account is active and if true it will call Base MakeWithdrawl
             if (status == Status.active) { 
             base.MakeWithdrawl(amount);
@@ -43,6 +36,12 @@ namespace Lab3Bank.Entities
 
         public override void MakeDeposit(double amount)
         {
+            if (currentBalance <= 25)
+            {
+                status = Status.inactive;
+            }
+            else
+                status = Status.active;
             if (status == Status.inactive)
             {
                 base.MakeDeposit(amount);
@@ -52,8 +51,10 @@ namespace Lab3Bank.Entities
                 }
 
             }
+            else
+                base.MakeDeposit(amount);
 
-            
+
         }
         public override string CloseAndReport()
         {
@@ -62,6 +63,8 @@ namespace Lab3Bank.Entities
                 
                 base.serviceCharge += base.numWithdrawal - 4;
             }
+
+            
             
             return base.CloseAndReport();
         }

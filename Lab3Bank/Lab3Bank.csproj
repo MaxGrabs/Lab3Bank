@@ -44,7 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Account.cs" />
-    <Compile Include="Entities\AccountStatus.cs" />
+    <Compile Include="Entities\Status.cs" />
     <Compile Include="Entities\ChequingAccount.cs" />
     <Compile Include="Entities\GlobalSavingsAccount.cs" />
     <Compile Include="Entities\IAccount.cs" />

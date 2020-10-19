@@ -8,6 +8,6 @@ namespace Lab3Bank.Entities
 {
     interface IExchangeable
     {
-        double USValue();
+        double USValue(double rate);
     }
 }

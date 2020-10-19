@@ -9,7 +9,7 @@ namespace Lab3Bank.Entities
     public abstract class Account : IAccount
     {
         protected double startBalance;
-        protected double currentBalance;
+        protected double currentBalance; 
         protected double totalDeposit;
         protected double numDeposit;
         protected double totalWithdrawal;
@@ -42,26 +42,29 @@ namespace Lab3Bank.Entities
         public virtual string CloseAndReport()
         {
             currentBalance -= serviceCharge;
+
             CalculateInterest();
             
-            Console.WriteLine(totalDeposit);
-            Console.WriteLine(totalWithdrawal);
-            Console.WriteLine(numDeposit);
-            Console.WriteLine(numWithdrawal);
-            double percentage = (currentBalance / startBalance) * 100;
+            Console.WriteLine("Total Deposit " + totalDeposit);
+            Console.WriteLine("Total Withdrawn " + totalWithdrawal);
+            Console.WriteLine("Total number of Deposits " + numDeposit);
+            Console.WriteLine("Total number of Withdrawals " + numWithdrawal);
+          
+           double percentage = ((currentBalance / startBalance)*100);
                
-            string end =  "starting balance of the month " + startBalance + " Balance at the end of the month " + currentBalance + " the change in balance over the month " + "%" + percentage;
-            string hello = "hello";
-            /*
+           string end =  "starting balance of the month " + startBalance +"\n Balance at the end of the month " + currentBalance + "\n the change in balance over the month "  + percentage + "%" + "\n";
+            
+            
 
             startBalance = currentBalance;
             totalDeposit = 0;
             numWithdrawal = 0;
             numDeposit = 0;
             totalWithdrawal = 0;
-            */
+            
             //ALSO PRINT ANY DETAILS THAT public void CalculateInterest() may print
-            return hello;
+            return end;
+
         }
 
         public virtual void MakeWithdrawl(double amount)

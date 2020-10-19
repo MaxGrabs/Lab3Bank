@@ -13,15 +13,18 @@ namespace Lab3Bank
     {
         static void Main(string[] args)
         {
-
+                SavingsAccount sav = new SavingsAccount(5,0.12);
+                ChequingAccount che = new ChequingAccount(5,0.12);
+                GlobalSavingsAccount glo = new GlobalSavingsAccount(5,0.12);
             while (1 == 1) {
             try 
             {
-                SavingsAccount sav = new SavingsAccount(2,0.12);
-                ChequingAccount che = new ChequingAccount(3,0.12);
-                GlobalSavingsAccount glo = new GlobalSavingsAccount(4,0.12);
+               
                 Console.WriteLine("A: Savings B: Checking C: GlobalSavings Q: Exit");
                 String s = Console.ReadLine();
+
+
+
                 switch(s.ToUpper()){
                     case "A":
                         Console.WriteLine("A: Deposit B: Withdrawal C: Close + Report R: Return to Bank Menu");
@@ -38,11 +41,12 @@ namespace Lab3Bank
                                 Console.WriteLine("How much would you like to withdraw?");
                                 string withdrawString = Console.ReadLine();
                                 double withdraw = Convert.ToDouble(withdrawString);
-                                sav.MakeDeposit(withdraw);
+                                sav.MakeWithdrawl(withdraw);
                                 break;
                             case "C":
-                                sav.CloseAndReport();
-                                break;
+                                   
+                                    Console.Write(sav.CloseAndReport());
+                                    break;
                             case "R":
                                 // come back 
                                 break;
@@ -64,10 +68,10 @@ namespace Lab3Bank
                                 Console.WriteLine("How much would you like to withdraw?");
                                 string withdrawString = Console.ReadLine();
                                 double withdraw = Convert.ToDouble(withdrawString);
-                                che.MakeDeposit(withdraw);
+                                che.MakeWithdrawl(withdraw);
                                 break;
                             case "C":
-                                che.CloseAndReport();
+                                    Console.Write(che.CloseAndReport());
                                 break;
                             case "R":
                                 //come back
@@ -90,13 +94,14 @@ namespace Lab3Bank
                                 Console.WriteLine("How much would you like to withdraw?");
                                 string withdrawString = Console.ReadLine();
                                 double withdraw = Convert.ToDouble(withdrawString);
-                                glo.MakeDeposit(withdraw);
+                                glo.MakeWithdrawl(withdraw);
                                 break;
                             case "C":
-                                glo.CloseAndReport();
+                                Console.WriteLine(glo.CloseAndReport());
                                 break;
                             case "D":
-                                glo.USValue();
+                                Console.WriteLine(glo.USValue(0.76));
+                                   
                                 break;
                             case "R":
                                 //Come back
